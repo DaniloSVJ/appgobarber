@@ -4,7 +4,7 @@ import Input from '../../components/Input'
 import Button from '../../components/Button'
 import {Image} from 'react-native'
 import logoImg from '../../assets/logo.png'
-
+import {View} from 'react-native'
 import {Container,Title} from './styles';
 
 const SignIn : React.FC = () => (
@@ -14,7 +14,7 @@ const SignIn : React.FC = () => (
 
   <Input name="email" icon="mail" placeholder="E-mail" />
   <Input name="password" icon="lock" placeholder="Senha"/>
-  <Button>Entrar</Button>;
+  <View><Button>Entrar</Button></View>
 </Container>
 );
 
