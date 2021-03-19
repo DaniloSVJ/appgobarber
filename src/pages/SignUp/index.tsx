@@ -2,7 +2,7 @@ import React,{useRef} from 'react';
 import {useNavigation} from "@react-navigation/native"
 import Input from '../../components/Input'
 import Button from '../../components/Button'
-import {Image,ScrollView, KeyboardAvoidingView, Platform,View,Text} from 'react-native'
+import {Image,ScrollView, KeyboardAvoidingView, Platform,View} from 'react-native'
 import logoImg from '../../assets/logo.png'
 import {Form} from '@unform/mobile'
 import {FormHandles} from "@unform/core"
@@ -38,7 +38,10 @@ const SignUp : React.FC = () => {
           <Input name="email" icon="mail" placeholder="E-mail" />
           <Input name="password" icon="lock" placeholder="Senha" />
           <Viewbutton>
-            <Button >Entrar</Button>
+            <Button  onPress={() => {
+                  formRef.current?.submitForm();
+                }}>Entrar
+            </Button>
           </Viewbutton>
           </Form>
     </Container>

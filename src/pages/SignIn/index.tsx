@@ -27,11 +27,7 @@ const SignIn : React.FC = () => {
   },[])
   return(
     <>
-    <ScrollView>
-    <KeyboardAvoidingView
-      style={{flex:1}}
-      behavior={Platform.OS === 'ios' ? 'padding': undefined}
-    >
+
       <Container>
       <Image source={logoImg}/>
       <View><Title style={{fontFamily:'RobotoSlab-Medium'}} >
@@ -49,15 +45,16 @@ const SignIn : React.FC = () => {
 
             />
             <Viewbutton>
-              <Button  >Entrar</Button></Viewbutton>
+              <Button onPress={() => {
+                  formRef.current?.submitForm();
+                }}  >Entrar</Button></Viewbutton>
           </Form>
           <ForgotPassword>
               <ForgotPasswordText>Esqueci minha Senha</ForgotPasswordText>
           </ForgotPassword>
 
     </Container>
-    </KeyboardAvoidingView>
-</ScrollView>
+
       <CreateAccountButton onPress={() => navigation.navigate('SignIn')}>
         <Icon name="log-in" size={20} color="#ff9000" />
 
